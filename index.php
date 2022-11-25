@@ -5,22 +5,21 @@
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <meta name='author' content='Diego Cavenati'>
         <title>Php Badwords</title>
-         <!-- Font awesome -->
-        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css'>
         <!-- Personal CSS -->
-        <link rel='stylesheet' href='./assets/css/style.css'>
+        <link rel='stylesheet' href='./style.css'>
     </head>
     <body>
 
     <h1>Badwords</h1>
     <form action="results.php" method="get">
-        <div class="phrase">
-            <label for="phrase" class="form-label">Scrivi quello che vuoi</label>
-            <input type="text" name="phrase" id="phrase">
+        <div class="textUser">
+            <label for="textUser" class="form-label">Scrivi quello che vuoi</label>
+            
+            <textarea name="textUser" id="textUser" cols="30" rows="10"></textarea>
         </div>
-        <div class="secretWord">
-            <label for="secretWord" class="form-label">Scrivi la parola segreta</label>
-            <input type="text" name="secretWord" id="secretWord">
+        <div class="badWord">
+            <label for="badWord" class="form-label">Scrivi la parola segreta</label>
+            <input type="text" name="badWord" id="badWord">
         </div>
         <button type="submit">Invia</button>
     </div>

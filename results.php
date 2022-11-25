@@ -1,8 +1,7 @@
 <?php 
 
-$phrase = $_GET['phrase'];
-$secretWord = $_GET['secretWord'];
-
+$textUser = strtolower(trim($_GET['textUser']));
+$badWord = strtolower($_GET['badWord']);
 
 // $numberOfWord = [];
 // $lenght = strlen($secretWord);
@@ -11,9 +10,13 @@ $secretWord = $_GET['secretWord'];
 // }
 // $icon = var_dump($numberOfWord);
 
-$censorship = str_replace("$secretWord", "***", $secretWord);
+$textCensored = null;
+if(strcasecmp($badWord, $textUser)){
+    $textCensored = str_replace($badWord, "****", $textUser);
+} else {
+    $textCensored = $textUser;
+}
 
-$results = "$phrase $censorship";
 ?>
 
 <!doctype html> 
@@ -23,14 +26,12 @@ $results = "$phrase $censorship";
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <meta name='author' content='Diego Cavenati'>
         <title>Php Badwords</title>
-        <!-- Font awesome -->
-        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css'>
         <!-- Personal CSS -->
-        <link rel='stylesheet' href='./assets/css/style.css'>
+        <link rel='stylesheet' href='./style.css'>
     </head>
     <body>
 
-    <h1><?php echo $results; ?></h1>
+    <h1><?php echo $textCensored; ?></h1>
 
     </body>
 </html>
