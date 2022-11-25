@@ -31,7 +31,7 @@ if(strcasecmp($badWord, $textUser)){
     </head>
     <body>
 
-    <h1><?php echo $textCensored; ?></h1>
+    <h1><?php echo ucfirst($textCensored); ?></h1>
 
     </body>
 </html>
