@@ -1,9 +1,19 @@
 <?php 
 
-$phrase =$_GET['phrase'];
-$secretWord =$_GET['secretWord'];
+$phrase = $_GET['phrase'];
+$secretWord = $_GET['secretWord'];
 
-$results = "$phrase $secretWord"
+
+// $numberOfWord = [];
+// $lenght = strlen($secretWord);
+// foreach($numberOfWord as $lenght){
+//     array_push($numberOfWord, "*");
+// }
+// $icon = var_dump($numberOfWord);
+
+$censorship = str_replace("$secretWord", "***", $secretWord);
+
+$results = "$phrase $censorship";
 ?>
 
 <!doctype html> 
